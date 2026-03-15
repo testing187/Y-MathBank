@@ -44,3 +44,42 @@ document.getElementById("game").src=url;
     <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Game Box</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #222; color: white; }
+        #search { padding: 10px; width: 300px; border-radius: 5px; margin: 20px; }
+        .game-list { display: flex; flex-wrap: wrap; justify-content: center; }
+        .game-card { background: #444; margin: 10px; padding: 20px; border-radius: 10px; width: 150px; }
+        a { color: #00ffcc; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>My Games</h1>
+    <!-- The Search Bar -->
+    <input type="text" id="search" placeholder="Search games..." onkeyup="filterGames()">
+
+    <!-- The List of Games -->
+    <div class="game-list" id="gameContainer">
+        <div class="game-card"><a href="https://play2048.co">2048</a></div>
+        <div class="game-card"><a href="https://blockly.games">Snake</a></div>
+        <div class="game-card"><a href="https://tetris.com">Tetris</a></div>
+        <!-- JUST ADD MORE CARDS LIKE THE ONES ABOVE TO ADD GAMES -->
+    </div>
+
+    <script>
+        function filterGames() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let cards = document.getElementsByClassName('game-card');
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].innerText.toLowerCase();
+                cards[i].style.display = name.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
