@@ -8,27 +8,60 @@
 
 <h1>🎮 Y Math Bank Games</h1>
 <p> Hi sisters</p>
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Panel</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        #game-container {
-            width: 100vw;
-            height: 100vh;
-            border: none;
+        body { background: #111; color: white; font-family: sans-serif; text-align: center; margin: 0; }
+        #navbar {
+            background: #222; height: 50px; display: flex; align-items: center; 
+            justify-content: space-between; padding: 0 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
+        .nav-btn {
+            color: #00ffcc; text-decoration: none; border: 1px solid #00ffcc;
+            padding: 5px 15px; border-radius: 5px; font-weight: bold;
+        }
+        .main-content { margin-top: 100px; padding: 20px; }
+        .launch-btn {
+            background: #00ffcc; color: #111; padding: 20px 40px; font-size: 24px;
+            border: none; border-radius: 10px; cursor: pointer; font-weight: bold;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+        }
+        .launch-btn:hover { transform: scale(1.05); background: #00e6b8; }
     </style>
 </head>
 <body>
 
-    <!-- This loads the arcade without leaving your site -->
-    <iframe 
-        id="game-container" 
-        src="https://krosign.github.io" 
-        shortcut icon="true">
-    </iframe>
+    <div id="navbar">
+        <span>🎮 <b>My Game Panel</b></span>
+        <a href="index.html" class="nav-btn">🏠 Home</a>
+    </div>
 
+    <div class="main-content">
+        <h1>Ethyrnal's Arcade</h1>
+        <p>If the game doesn't load below, use the Cloak Launcher:</p>
+        <button class="launch-btn" onclick="openArcade()">🚀 Launch Arcade (Cloaked)</button>
+    </div>
+
+    <script>
+        function openArcade() {
+            // This opens the site in a blank window to bypass iframe blocks
+            var url = "https://krosign.github.io";
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
+    </script>
 </body>
 </html>
+
 
