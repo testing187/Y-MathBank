@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Y Math Bank Games</title>
+</head>
 
+<body style="background:black;color:white;text-align:center;font-family:Arial;">
+
+<h1>🎮 Y Math Bank Games</h1>
+<p>Click a game to play</p>
+
+<button onclick="play('https://play2048.co/')">Play 2048</button>
+<br><br>
+
+<button onclick="play('https://playsnake.org/')">Play Snake</button>
+<br><br>
+
+<iframe id="game" width="90%" height="600"></iframe>
+
+<script>
+function play(url){
+document.getElementById("game").src=url;
+}
+</script>
+
+</body>
+</html>
