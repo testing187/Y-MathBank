@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Game Hub</title>
 
+<style>
+body{
+  font-family: Arial;
+  background:#121212;
+  color:white;
+  text-align:center;
+}
+
+h1{
+  margin-top:30px;
+}
+
+.game-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+  gap:20px;
+  padding:40px;
+}
+
+.game{
+  background:#1e1e1e;
+  padding:20px;
+  border-radius:10px;
+  transition:0.2s;
+}
+
+.game:hover{
+  transform:scale(1.05);
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:5px;
+  background:#00c3ff;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+#gameFrame{
+  margin-top:30px;
+  width:90%;
+  height:600px;
+  border:none;
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎮 My Unblocked Games</h1>
+<p>Select a game to play</p>
+
+<div class="game-grid">
+
+<div class="game">
+<h3>2048</h3>
+<button onclick="playGame('https://play2048.co/')">Play</button>
+</div>
+
+<div class="game">
+<h3>Snake</h3>
+<button onclick="playGame('https://playsnake.org/')">Play</button>
+</div>
+
+<div class="game">
+<h3>Tetris</h3>
+<button onclick="playGame('https://tetris.com/play-tetris')">Play</button>
+</div>
+
+<div class="game">
+<h3>Pacman</h3>
+<button onclick="playGame('https://freepacman.org/')">Play</button>
+</div>
+
+</div>
+
+<iframe id="gameFrame"></iframe>
+
+<script>
+function playGame(url){
+  const frame = document.getElementById("gameFrame");
+  frame.style.display = "block";
+  frame.src = url;
+  window.scrollTo(0, document.body.scrollHeight);
+}
+</script>
+
+</body>
+</html>
