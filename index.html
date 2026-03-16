@@ -1,13 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Y Math Bank Games</title>
+<title>Y Math Bank</title>
+
+<style>
+body{
+  background:black;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+}
+
+h1{
+  margin-top:20px;
+}
+
+#search{
+  padding:10px;
+  width:250px;
+  border-radius:8px;
+  border:none;
+  margin:20px;
+}
+
+.game-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,150px);
+  gap:20px;
+  justify-content:center;
+  padding:20px;
+}
+
+.game-card{
+  background:#1a1a1a;
+  border-radius:10px;
+  padding:10px;
+  text-decoration:none;
+  color:white;
+  transition:0.2s;
+}
+
+.game-card:hover{
+  background:#333;
+  transform:scale(1.05);
+}
+
+.game-card img{
+  width:100%;
+  border-radius:6px;
+}
+</style>
+
+<script>
+function searchGames(){
+  let input=document.getElementById("search").value.toLowerCase();
+  let games=document.querySelectorAll(".game-card");
+
+  games.forEach(game=>{
+    if(game.innerText.toLowerCase().includes(input)){
+      game.style.display="block";
+    }else{
+      game.style.display="none";
+    }
+  });
+}
+</script>
+
 </head>
 
-<body style="background:black;color:white;text-align:center;font-family:Arial;">
+<body>
 
 <h1>🎮 Y Math Bank Games</h1>
-<p> Hi sisters</p>
+<p>Game Library</p>
+
+<input type="text" id="search" onkeyup="searchGames()" placeholder="Search games...">
+
+<div class="game-grid">
+
+<a href="games/slope.html" class="game-card">
+<img src="https://i.imgur.com/7Qj6K6p.png">
+<p>Slope</p>
+</a>
+
+<a href="games/run3.html" class="game-card">
+<img src="https://i.imgur.com/W6KR7XH.png">
+<p>Run 3</p>
+</a>
+
+<a href="games/tunnelrush.html" class="game-card">
+<img src="https://i.imgur.com/v7K9K0T.png">
+<p>Tunnel Rush</p>
+</a>
+
+<a href="games/retrobowl.html" class="game-card">
+<img src="https://i.imgur.com/JhKpH2V.png">
+<p>Retro Bowl</p>
+</a>
+
+</div>
+
+</body>
+</html>
 
 
 
